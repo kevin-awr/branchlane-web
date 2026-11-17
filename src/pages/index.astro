@@ -1,16 +1,50 @@
 ---
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Start">
+  <section class="hero">
+    <p class="eyebrow">Lernprojekt & Portfolio</p>
+    <h1>Branchlane</h1>
+    <p class="lead">
+      Hier baue ich Schritt für Schritt eigene Infrastruktur, Automatisierungen
+      und Apps – und dokumentiere offen, was funktioniert und was nicht.
+    </p>
+  </section>
+
+  <section>
+    <h2>Aktueller Stand</h2>
+    <ul class="phases">
+      <li class="done">Vorbereitung – Domain, E-Mail und GitHub eingerichtet</li>
+      <li class="active">Phase 0 – Erste Website (diese Seite)</li>
+      <li>Phase 1 – Eigener Server mit Docker</li>
+      <li>Phase 2 – Automatisches Deployment</li>
+      <li>Phase 3 – Eigene App</li>
+      <li>Phase 4 – KI-Integration</li>
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding: 3rem 0 2rem; }
+  .eyebrow {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+  }
+  h1 { font-size: 3rem; margin: 0.25rem 0; }
+  .lead { font-size: 1.2rem; color: var(--muted); max-width: 600px; }
+  .phases { list-style: none; padding: 0; }
+  .phases li {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+  }
+  .phases li.done { color: var(--text); }
+  .phases li.done::before { content: "✓ "; color: #4caf50; }
+  .phases li.active { border-color: var(--accent); color: var(--text); }
+</style>
